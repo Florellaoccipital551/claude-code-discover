@@ -8,8 +8,8 @@ A Claude Code plugin that structures product context in your repo before impleme
 Works standalone, or paired with [claude-code-workflows](https://github.com/shinpr/claude-code-workflows) for a full discovery-to-implementation cycle:
 
 ```
-[claude-code-discover]  →  PRD  →  [claude-code-workflows]
-   Discovery phase                   Implementation phase
+[claude-code-discover]  →  PRD + Prototypes  →  [claude-code-workflows]
+   Discovery phase                                Implementation phase
 ```
 
 ## The Problem
@@ -22,6 +22,8 @@ When you ask an AI coding assistant to build a feature, it generates code withou
 Vision & Personas        ← who you're building for and why
       ↓
   Opportunities          ← your hypotheses structured with validation plans
+      ↓
+  Blueprint              ← IA, user flows, content model, brand direction
       ↓
   Hypothesis Files       ← testable assumptions with success/failure criteria
       ↓
@@ -37,6 +39,7 @@ Each recipe is a step in this cycle. Run them in order or jump to where you need
 | `/discover:recipe-vision` | Define product vision, outcomes, and North Star Metric |
 | `/discover:recipe-persona` | Create personas with JTBD, pains/gains, and behavioral data |
 | `/discover:recipe-discover` | Structure your hypotheses into Opportunities with validation plans |
+| `/discover:recipe-blueprint` | Define structural design foundation — IA, user flows, content model, brand direction, AI interaction model |
 | `/discover:recipe-validate` | Decompose assumptions, design falsifiable tests, generate HTML prototypes |
 | `/discover:recipe-reflect` | Extract learnings, promote knowledge across the hierarchy |
 | `/discover:recipe-define` | Generate a PRD from validated hypotheses with confidence scores |
@@ -44,7 +47,8 @@ Each recipe is a step in this cycle. Run them in order or jump to where you need
 ### What each recipe produces
 
 - **Hypothesis file**: Markdown with assumption statement, success/failure criteria, confidence scores per risk dimension, time budget, and validation results
-- **Prototype**: Single self-contained HTML file (~800-1200 lines) that opens in a browser. Deterministic mock data, all UI states implemented, design principles applied from project files
+- **Blueprint artifacts**: Information architecture, user flows, content model, brand direction, and AI interaction model — shared structural context that prototypes reference for consistency
+- **Prototype**: Single self-contained HTML file (~800-1200 lines) that opens in a browser. Deterministic mock data, all UI states implemented, design context applied from blueprint and project files
 - **PRD**: 200-400 line document with user stories (each with 4 Risks confidence table), EARS-format acceptance criteria, unvalidated assumptions section, and references to hypothesis files
 
 ## How Validation Works
@@ -57,19 +61,20 @@ Each validation produces:
 Two agents work in separate contexts:
 
 1. **hypothesis-verifier** decomposes your hypothesis into assumptions, ranks them by risk, and designs the smallest test that could disprove each one — without seeing your expectations
-2. **prototype-generator** reads your design principles, persona, and hypothesis files, then generates a self-contained HTML prototype with deterministic mock data and all UI states
+2. **prototype-generator** reads your design principles, persona, hypothesis files, and blueprint artifacts (when available), then generates a self-contained HTML prototype with deterministic mock data and all UI states
 
 The context separation is deliberate. The verifier designs tests that can fail. The prototype generator builds a product UI without test infrastructure leaking in.
 
 ## Connecting to Implementation
 
-The PRD that `recipe-define` produces follows the standard structure that [claude-code-workflows](https://github.com/shinpr/claude-code-workflows) expects. Discovery extensions (hypothesis references, 4 Risks confidence per user story, unvalidated assumptions) are additive — they provide context without breaking compatibility.
+The PRD that `recipe-define` produces follows the standard structure that [claude-code-workflows](https://github.com/shinpr/claude-code-workflows) expects. Discovery extensions (hypothesis references, 4 Risks confidence per user story, unvalidated assumptions) are additive — they provide context without breaking compatibility. Prototypes generated during validation can be passed to the UI Spec designer as design references.
 
 ```bash
 # Discovery phase (this plugin)
 /discover:recipe-define → docs/prd/feature-prd.md
 
 # Implementation phase (dev-workflows)
+# UI Spec designer accepts PRD + optional prototype as input
 /dev-workflows:recipe-implement "docs/prd/feature-prd.md"
 ```
 
@@ -117,6 +122,7 @@ As you use the recipes, artifacts accumulate in `docs/`:
 ```
 docs/
 ├── product/             # Vision, personas, design principles, learnings
+│   └── design/          # Blueprint: IA, user flows, content model, brand direction
 ├── discovery/           # Opportunities, hypotheses, prototypes, journeys
 │   └── INDEX.md         # Auto-maintained summary of discovery status
 └── prd/                 # PRDs ready for implementation
