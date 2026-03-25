@@ -17,11 +17,21 @@ Organize pages hierarchically. Mark each page with its primary role and target p
 
 **Role types**: Landing, Dashboard, Creation, Detail, Transaction, Settings, Discovery
 
+### Labeling & Taxonomy
+
+| Aspect | Decision |
+|--------|----------|
+| Navigation labels | {user-facing terminology for menu items — derived from user mental model, not internal naming} |
+| Content categories | {how content is grouped for browsing — e.g., by type, by topic, by persona} |
+| Search strategy | {primary discovery method: navigation-driven / search-driven / hybrid} |
+
 ### Navigation Model
+
+Not all pages need navigation. Linear task flows (e.g., onboarding wizard, checkout) should use step indicators instead of full navigation to avoid premature exits.
 
 | Element | Type | Visible To | Content |
 |---------|------|-----------|---------|
-| {nav-element} | Global / Contextual / Utility | {roles} | {items} |
+| {nav-element} | Global / Contextual / Utility / Step indicator | {roles} | {items} |
 
 ### Page Inventory
 

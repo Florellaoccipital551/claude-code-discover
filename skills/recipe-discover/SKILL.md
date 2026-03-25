@@ -61,7 +61,7 @@ See business-context skill `references/business-model-canvas.md`, `references/va
 
 ### 3. User Context Analysis
 
-- **Personas**: Reference existing personas (`docs/product/personas/`). If no persona files exist, create them first
+- **Personas**: Reference existing personas (`docs/product/personas/`). If no persona files exist, stop and inform the user that persona files are required before discovery can proceed
 - **JTBD**: Identify functional, social, and emotional jobs from VPC Customer Profile
 - **Journey Mapping**: Create journey maps using `references/journey-template.md` to visualize pain points and opportunities
 

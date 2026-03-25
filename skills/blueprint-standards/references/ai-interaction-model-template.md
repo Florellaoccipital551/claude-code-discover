@@ -72,6 +72,17 @@ Define the boundary between AI-generated and human-edited content:
 | Edit | User | Fine-tune details |
 | Re-generate | User triggers, AI executes | Partial or full regeneration |
 
+### Transparency & Confidence Communication
+
+Define how the product communicates AI involvement and output reliability to users:
+
+| Aspect | Decision | Rationale |
+|--------|----------|-----------|
+| AI disclosure | {how users know AI is involved — label, icon, explanation, none} | {trust/regulatory requirement} |
+| Confidence indication | {how output certainty is communicated — explicit score, visual cue, hedging language, none} | {user expectation for accuracy} |
+| Source attribution | {whether AI-generated content is labeled as such after creation} | {content ownership clarity} |
+| Limitation visibility | {where/how AI limitations are communicated — onboarding, inline, help, none} | {error prevention} |
+
 ### Guardrails
 
 | Guardrail | Implementation | User-Visible Behavior |

@@ -54,7 +54,7 @@ Input: $ARGUMENTS
 | `docs/discovery/journeys/` | Journey maps (if available) |
 | `docs/product/learnings.md` | Tier 1 learnings from reflection cycles |
 
-**Gate: Vision, design principles, and at least one persona file must exist. At least one Opportunity must be identified. If missing → inform user which prerequisite files are needed before proceeding.**
+**Gate: Vision, design principles, and at least one persona file must exist. At least one Opportunity must be identified (draft status is sufficient — validation is not required). If missing → inform user which prerequisite files are needed before proceeding.**
 
 | Situation | Mode | Action |
 |-----------|------|--------|

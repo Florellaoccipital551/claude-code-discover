@@ -85,7 +85,7 @@ When brand-direction does not exist, infer all 5 axes from design principles and
 4. **Spatial**: Determine layout density, whitespace rhythm, card elevation
 5. **Texture**: Define surface differentiation, border treatment, background warmth
 
-Record these decisions as CSS custom properties with comments tracing each decision to a design principle.
+Record these decisions as CSS custom properties. When brand-direction was the source, trace comments to brand-direction entries. When design principles and vision were the source (no brand-direction), trace comments to design principles.
 
 ### Step 3: Mock Data Design
 
